@@ -9,7 +9,7 @@ export class LoginPage {
   readonly errorMessage: Locator;
 
   constructor(page: Page) {
-    
+
     this.page = page;
     this.usernameInput = page.getByPlaceholder('Username');
     this.passwordInput = page.getByPlaceholder('Password');
