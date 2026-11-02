@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { users } from '../data/users';
-import { errorMessages } from '../data/messages';
+import { LoginPage } from '../../pages/LoginPage';
+import { users } from '../../data/users';
+import { errorMessages } from '../../data/messages';
 
 test.describe('Login Tests', () => {
     let loginPage: LoginPage;
@@ -16,10 +16,10 @@ test.describe('Login Tests', () => {
         await expect(page).toHaveURL(/inventory\.html/);
     });
 
-  test('should login successfully with performanceGlitch user', async ({ page }) => {
+    test('should login successfully with performanceGlitch user', async ({ page }) => {
 
-  await loginPage.login(users.performanceGlitch.username, users.performanceGlitch.password);
-});
+        await loginPage.login(users.performanceGlitch.username, users.performanceGlitch.password);
+    });
 
     test('should show error for locked out user', async () => {
         await loginPage.login(users.lockedOut.username, users.lockedOut.password);
