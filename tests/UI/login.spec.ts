@@ -19,6 +19,7 @@ test.describe('Login Tests', () => {
     test('should login successfully with performanceGlitch user', async ({ page }) => {
 
         await loginPage.login(users.performanceGlitch.username, users.performanceGlitch.password);
+        await expect(page).toHaveURL(/inventory\.html/);
     });
 
     test('should show error for locked out user', async () => {
